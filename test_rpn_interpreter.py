@@ -10,7 +10,6 @@ import pytest
 
 def test_single_value():
     assert evaluate("42") == 42
-@pytest.mark.skip
 
 
 def test_single_expression():

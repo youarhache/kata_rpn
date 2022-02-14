@@ -1,6 +1,16 @@
 def evaluate(expression):
-    result = int(expression)
+    tokens = parse(expression)
+
+    stack = Stack()
+
+    for token in tokens:
+        if isinstance(token, int):
+            stack.push(token)
+        else:
+            stack.apply(token)
     return result
+
+
 def parse(expression):
     if not expression:
         return []
