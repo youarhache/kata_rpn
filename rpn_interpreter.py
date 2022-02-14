@@ -6,6 +6,8 @@ def parse(expression):
         return []
     tokens = [parse_token(x) for x in expression.split(" ")]
     return tokens
+
+
 def parse_token(token):
     if token == "+":
         return add
@@ -17,8 +19,10 @@ def parse_token(token):
         return divide
     return int(token)
 
+
 def add(x, y):
     return x + y
+
 
 def multiply():
     pass
