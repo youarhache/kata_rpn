@@ -11,10 +11,39 @@ def parse_token(token):
         return add
     elif token == "*":
         return multiply
+    elif token == "-":
+        return minus
+    elif token == "/":
+        return divide
     return int(token)
 
-def add():
-    pass
+def add(x, y):
+    return x + y
 
 def multiply():
     pass
+
+
+def minus(x, y):
+    return x - y
+
+
+def divide():
+    pass
+
+
+class Stack:
+    def __init__(self):
+        self.values = []
+
+    def push(self, number):
+        self.values.append(number)
+
+    def pop(self):
+        return self.values.pop()
+
+    def apply(self, function):
+        right = self.pop()
+        left = self.pop()
+        result = function(left, right)
+        self.push(result)
