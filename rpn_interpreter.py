@@ -8,11 +8,11 @@ def evaluate(expression):
             stack.push(token)
         else:
             right = stack.pop()
-            left.stack.pop()
+            left = stack.pop()
             result = token(left, right)
             stack.push(result)
 
-    return result
+    return stack.pop()
 
 
 def parse(expression):
