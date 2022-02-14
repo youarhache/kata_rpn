@@ -62,19 +62,3 @@ def test_pop_number_from_stack():
     number = stack.pop()
     assert stack.values == [1]
     assert number == 2
-
-
-def test_apply_add():
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.apply(add)
-    assert stack.values == [3]
-
-
-def test_apply_minus():
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.apply(minus)
-    assert stack.values == [-1]

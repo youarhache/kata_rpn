@@ -7,7 +7,11 @@ def evaluate(expression):
         if isinstance(token, int):
             stack.push(token)
         else:
-            stack.apply(token)
+            right = stack.pop()
+            left.stack.pop()
+            result = token(left, right)
+            stack.push(result)
+
     return result
 
 
@@ -55,9 +59,3 @@ class Stack:
 
     def pop(self):
         return self.values.pop()
-
-    def apply(self, function):
-        right = self.pop()
-        left = self.pop()
-        result = function(left, right)
-        self.push(result)
